@@ -3,7 +3,7 @@ title: "Homework 3"
 output: html_notebook
 ---
 
-Nursery dataset used:
+The dataset used is the Gender Statistics database, a comprehensive source for the latest sex-disaggregated data and gender statistics covering demography, education, health, access to economic opportunities, public life and decision-making, and agency, available at https://datacatalog.worldbank.org/dataset/gender-statistics:
 
 ```{r}
 dataset <- read.csv("Gender_StatsData.csv", stringsAsFactors=FALSE)
