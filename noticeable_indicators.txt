@@ -1,1 +1,79 @@
 "SL.EMP.SMGT.FE.ZS"	"Female share of employment in senior and middle management (%)"
+
+"SE.TER.GRAD.FE.SI.ZS"	"Female share of graduates from Science, Technology, Engineering and Mathematics (STEM) programmes, tertiary (%)"
+
+
+"SL.EMP.MPYR.FE.ZS"	"Employers, female (% of female employment) (modeled ILO estimate)"
+"SL.EMP.MPYR.MA.ZS"	"Employers, male (% of male employment) (modeled ILO estimate)"
+"SL.AGR.EMPL.FE.ZS"	"Employment in agriculture, female (% of female employment) (modeled ILO estimate)"
+"SL.AGR.EMPL.MA.ZS"	"Employment in agriculture, male (% of male employment) (modeled ILO estimate)"
+"SL.IND.EMPL.FE.ZS"	"Employment in industry, female (% of female employment) (modeled ILO estimate)"
+"SL.IND.EMPL.MA.ZS"	"Employment in industry, male (% of male employment) (modeled ILO estimate)"
+"SL.SRV.EMPL.FE.ZS"	"Employment in services, female (% of female employment) (modeled ILO estimate)"
+"SL.SRV.EMPL.MA.ZS"	"Employment in services, male (% of male employment) (modeled ILO estimate)"
+"SL.EMP.TOTL.SP.FE.ZS"	"Employment to population ratio, 15+, female (%) (modeled ILO estimate)"
+
+
+"IC.WEF.LLCO.FE"	"Number of female business owners"
+"IC.WEF.LLCD.FE"	"Number of female directors"
+"IC.WEF.SOLO.FE"	"Number of female sole proprietors"
+"IC.WEF.LLCO.MA"	"Number of male business owners"
+"IC.WEF.LLCD.MA"	"Number of male directors"
+"IC.WEF.SOLO.MA"	"Number of male sole proprietors"
+
+"SG.GEN.PARL.ZS"	"Proportion of seats held by women in national parliaments (%)"
+
+"IC.REG.DURS.FE"	"Time required to start a business, female (days)"
+"IC.REG.DURS.MA"	"Time required to start a business, male (days)"
+
+
+
+
+"SL.UEM.ADVN.FE.ZS"	"Unemployment with advanced education, female (% of female labor force with advanced education)"
+"SL.UEM.ADVN.MA.ZS"	"Unemployment with advanced education, male (% of male labor force with advanced education)"
+"SL.UEM.BASC.FE.ZS"	"Unemployment with basic education, female (% of female labor force with basic education)"
+"SL.UEM.BASC.MA.ZS"	"Unemployment with basic education, male (% of male labor force with basic education)"
+"SL.UEM.INTM.FE.ZS"	"Unemployment with intermediate education, female (% of female labor force with intermediate education)"
+"SL.UEM.INTM.MA.ZS"	"Unemployment with intermediate education, male (% of male labor force with intermediate education)"
+"SL.UEM.TOTL.FE.NE.ZS"	"Unemployment, female (% of female labor force) (national estimate)"
+
+"SG.VAW.REAS.ZS"	"Women who believe a husband is justified in beating his wife (any of five reasons) (%)"
+"SG.RSX.REAS.ZS"	"Women who believe a wife is justified refusing sex with her husband for all of the reasons (%)"
+
+"SG.OWN.HSNO.FE.ZS"	"Women who do not own a house (% of women age 15-49)"
+"SG.OWN.HSAL.FE.ZS"	"Women who own a house alone (% of women age 15-49)"
+
+
+"NY.GDP.MKTP.CD"	"GDP (current US$)"
+"NY.GDP.MKTP.KD.ZG"	"GDP growth (annual %)"
+"NY.GDP.PCAP.CD"	"GDP per capita (Current US$)"
+
+
+Studies
+
+"SH.FPL.SATI.ZS"	"Demand for family planning satisfied by any methods (% of married women with demand for family planning)"
+"SH.FPL.SATM.ZS"	"Demand for family planning satisfied by modern methods (% of married women with demand for family planning)"
+
+"SE.TER.CUAT.BA.FE.ZS"	"Educational attainment, at least Bachelor's or equivalent, population 25+, female (%) (cumulative)"
+"SE.TER.CUAT.BA.MA.ZS"	"Educational attainment, at least Bachelor's or equivalent, population 25+, male (%) (cumulative)"
+"SE.SEC.CUAT.LO.FE.ZS"	"Educational attainment, at least completed lower secondary, population 25+, female (%) (cumulative)"
+"SE.SEC.CUAT.LO.MA.ZS"	"Educational attainment, at least completed lower secondary, population 25+, male (%) (cumulative)"
+"SE.SEC.CUAT.PO.FE.ZS"	"Educational attainment, at least completed post-secondary, population 25+, female (%) (cumulative)"
+"SE.SEC.CUAT.PO.MA.ZS"	"Educational attainment, at least completed post-secondary, population 25+, male (%) (cumulative)"
+"SE.PRM.CUAT.FE.ZS"	"Educational attainment, at least completed primary, population 25+ years, female (%) (cumulative)"
+"SE.PRM.CUAT.MA.ZS"	"Educational attainment, at least completed primary, population 25+ years, male (%) (cumulative)"
+"SE.TER.CUAT.ST.FE.ZS"	"Educational attainment, at least completed short-cycle tertiary, population 25+, female (%) (cumulative)"
+"SE.TER.CUAT.ST.MA.ZS"	"Educational attainment, at least completed short-cycle tertiary, population 25+, male (%) (cumulative)"
+"SE.SEC.CUAT.UP.FE.ZS"	"Educational attainment, at least completed upper secondary, population 25+, female (%) (cumulative)"
+"SE.SEC.CUAT.UP.MA.ZS"	"Educational attainment, at least completed upper secondary, population 25+, male (%) (cumulative)"
+"SE.TER.CUAT.MS.FE.ZS"	"Educational attainment, at least Master's or equivalent, population 25+, female (%) (cumulative)"
+"SE.TER.CUAT.MS.MA.ZS"	"Educational attainment, at least Master's or equivalent, population 25+, male (%) (cumulative)"
+"SE.TER.CUAT.DO.FE.ZS"	"Educational attainment, Doctoral or equivalent, population 25+, female (%) (cumulative)"
+"SE.TER.CUAT.DO.MA.ZS"	"Educational attainment, Doctoral or equivalent, population 25+, male (%)
+
+
+
+
+
+
+
