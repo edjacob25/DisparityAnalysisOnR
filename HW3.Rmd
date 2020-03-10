@@ -7,6 +7,7 @@ The dataset used is the Gender Statistics database, a comprehensive source for t
 ```{r}
 library(tidyverse)
 library(ggpubr)
+library(reshape2)
 ```
 
 ```{r}
@@ -58,6 +59,16 @@ info$country <- ifelse(row.names(info) != "Mexico", "Other", "Mexico")
 ggscatter(info, x = "NY.GDP.PCAP.CD", y ="SL.TLF.TOTL.FE.ZS", add = "reg.line", conf.int = TRUE, cor.method = "pearson", cor.coef = TRUE, cor.coeff.args = list(label.y.npc="bottom", label.x.npc="center"), xlab = "GDP Per Capita", ylab = "Percentage of female labor force", label = row.names(info), repel = TRUE, label.select = "Mexico", palette = "uchicago", color = "country")
 ```
 ```{r}
+
+parameters <- c("SG.LEG.DVAW", "SG.LAW.EQRM.WK", "SG.LAW.NODC.HR", "SG.NOD.CONS", "SG.IND.WORK.EQ")
+df <- subset(new_dat, subset = !is.na(NY.GDP.PCAP.CD) & !is.na(SG.NOD.CONS), select = c(parameters, "NY.GDP.PCAP.CD"))
+df[df==0] <- "NO"
+df[df==1] <- "YES"
+
+
+df.m <- melt(df, id.var = "NY.GDP.PCAP.CD")
+
+ggplot(data = df.m, aes(x=variable, y=NY.GDP.PCAP.CD)) + geom_boxplot(aes(fill=value)) + xlab("") + ylab("GDP Per Capita") + guides(fill=guide_legend(title="Has It")) + scale_x_discrete(labels=c("Legislation on\n domestic violence", "Law mandates\nequal\n remuneration","Law mandates\nnondiscrimination\nbased on gender","Nondiscrimination\nclause mentions\ngender in the\nconstitution", "Women are able\nto work in the\nsame industries\nas men"))
 
 ```
 
