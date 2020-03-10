@@ -5,7 +5,7 @@
 # Session Data files
 .RData
 
-# User-specific files
+# User-specific files	
 .Ruserdata
 
 # Example code in package build process
@@ -47,3 +47,5 @@ vignettes/*.pdf
 
 # Random files
 *.xoj
+
+*.pdf
