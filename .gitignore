@@ -42,5 +42,8 @@ vignettes/*.pdf
 *.jpg
 *.png
 
+# Exports
+*.nb.html
+
 # Random files
 *.xoj
