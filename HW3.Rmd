@@ -4,6 +4,10 @@ output: html_notebook
 ---
 
 The dataset used is the Gender Statistics database, a comprehensive source for the latest sex-disaggregated data and gender statistics covering demography, education, health, access to economic opportunities, public life and decision-making, and agency, available at https://datacatalog.worldbank.org/dataset/gender-statistics:
+```{r}
+library(tidyverse)
+library(ggpubr)
+```
 
 ```{r}
 dataset <- read.csv("Gender_StatsData.csv", stringsAsFactors=FALSE)
@@ -15,7 +19,7 @@ countries <- unique(dataset[,1])
 head(countries)
 ```
 ```{r}
-columns = unique(dataset[,3])
+columns = unique(dataset[,4])
 head(columns)
 ```
 
@@ -23,14 +27,37 @@ head(columns)
 ```{r}
 new_dat <- data.frame(row.names = countries)
 for (col_name in columns) {
-  col = subset(x = dataset, subset = Indicator.Name == col_name, select=X2017)
+  col = subset(x = dataset, subset = Indicator.Code == col_name, select=X2017)
   new_dat[col_name] <- col[, "X2017"]
 }
-new_dat <- new_dat[!sapply(new_dat, function (x) all(is.na(x) | x == ""))]
-summary(new_dat)
+new_dat <- tail(new_dat[!sapply(new_dat, function (x) all(is.na(x) | x == ""))], -46)
 ```
 
 
 ```{r}
-head(new_dat)
+head(new_dat, 10)
 ```
+```{r}
+index <- grep("education", names(new_dat), ignore.case = TRUE)
+new_dat %>% select(index)
+```
+```{r}
+info <- subset(new_dat, subset = !is.na(NY.GDP.PCAP.CD) & !is.na(SE.SEC.CUAT.UP.FE.ZS))
+
+info$country <- ifelse(row.names(info) != "Mexico", "Other", "Mexico")
+
+png("Fem_High_school_GDP.png")
+ggscatter(info, x = "NY.GDP.PCAP.CD", y ="SE.SEC.CUAT.UP.FE.ZS", add = "reg.line", conf.int = TRUE, cor.method = "pearson", cor.coef = TRUE, cor.coeff.args = list(label.y.npc="bottom", label.x.npc="center"), xlab = "GDP Per Capita", ylab = "Female population with at least high school at 25 years old", label = row.names(info), repel = TRUE, label.select = "Mexico", palette = "uchicago", color = "country")  #color="country", palette = c("red", "black"), fill = "lightgray")
+dev.off()
+```
+
+```{r}
+info <- subset(new_dat, subset = !is.na(NY.GDP.PCAP.CD) & !is.na(SL.TLF.TOTL.FE.ZS))
+info$country <- ifelse(row.names(info) != "Mexico", "Other", "Mexico")
+
+ggscatter(info, x = "NY.GDP.PCAP.CD", y ="SL.TLF.TOTL.FE.ZS", add = "reg.line", conf.int = TRUE, cor.method = "pearson", cor.coef = TRUE, cor.coeff.args = list(label.y.npc="bottom", label.x.npc="center"), xlab = "GDP Per Capita", ylab = "Percentage of female labor force", label = row.names(info), repel = TRUE, label.select = "Mexico", palette = "uchicago", color = "country")
+```
+```{r}
+
+```
+
