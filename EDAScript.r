@@ -140,7 +140,7 @@ sd(t_a_mxset$SL.UEM.INTM.FE.ZS)
 #ANOVA, employment in senior and mid mgmt as a function of woman that have studied
 
 res.aov <- aov(SL.EMP.SMGT.FE.ZS ~  SE.TER.CUAT.BA.FE.ZS + SE.TER.CUAT.MS.FE.ZS + SE.TER.CUAT.DO.FE.ZS, data = t_a_mxset)
-summary(res.aov)      
+summary(res.aov)
 
 #ANOVA, the M Sc and the Ph Ds as a function of the graduated from bachelors
 
