@@ -24,9 +24,9 @@ barplot(ord_fe_mgmt$X2018[1:17],
 
 fe_stem <- subset(dataset, dataset$Indicator.Code=='SE.TER.GRAD.FE.SI.ZS');
 fe_stem[is.na(fe_stem)] <- 0
-#ord_fe_stem<-fe_stem[order(-fe_stem$X2017),]
+ord_fe_stem<-fe_stem[order(-fe_stem$X2017),]
 ord_fe_stem[is.na(ord_fe_stem)] <- 0
-ord_fe_stem <- ord_fe_stem[order(-ord_fe_stem),]
+ord_fe_stem <- ord_fe_stem[order(-ord_fe_stem)]
 which(ord_fe_stem$Country.Code=='MEX')
 #barplot(c(ord_fe_stem$X2017[1:10],ord_fe_stem$X2017[27]),
 #        names.arg = c(ord_fe_stem$Country.Code[1:10],ord_fe_stem$Country.Code[27]),
