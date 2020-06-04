@@ -8,6 +8,9 @@ The dataset used is the Gender Statistics database, a comprehensive source for t
 library(tidyverse)
 library(ggpubr)
 library(reshape2)
+library(party)
+library(dplyr)
+library(plyr)
 ```
 
 ```{r}
@@ -71,4 +74,35 @@ df.m <- melt(df, id.var = "NY.GDP.PCAP.CD")
 ggplot(data = df.m, aes(x=variable, y=NY.GDP.PCAP.CD)) + geom_boxplot(aes(fill=value)) + xlab("") + ylab("GDP Per Capita") + guides(fill=guide_legend(title="Has It")) + scale_x_discrete(labels=c("Legislation on\n domestic violence", "Law mandates\nequal\n remuneration","Law mandates\nnondiscrimination\nbased on gender","Nondiscrimination\nclause mentions\ngender in the\nconstitution", "Women are able\nto work in the\nsame industries\nas men"))
 
 ```
+```{r}
+df <- subset(new_dat, subset = !is.na(NY.GDP.PCAP.CD) & !is.na(SG.NOD.CONS), select = c(parameters, "NY.GDP.PCAP.CD"))
 
+df <- rename(df, c("SG.LEG.DVAW"="Legislation on domestic violence",
+                  "SG.LAW.EQRM.WK" ="Law mandates equal remuneration",
+                  "SG.LAW.NODC.HR" = "Law mandates nondiscrimination based on gender",
+                  "SG.NOD.CONS" = "Nondiscrimination clause mentions gender in the constitution",
+                  "SG.IND.WORK.EQ" = "Women are able to work in the same industries as men"))
+
+create_train_test <- function(data, size = 0.8, train = TRUE) {
+    n_row = nrow(data)
+    total_row = size * n_row
+    train_sample <- 1: total_row
+    if (train == TRUE) {
+        return (data[train_sample, ])
+    } else {
+        return (data[-train_sample, ])
+    }
+}
+
+train <- create_train_test(data = df)
+test <- create_train_test(df, 0.8, train = FALSE)
+#png("Laws_tree.png")
+tree_model <- rpart(NY.GDP.PCAP.CD~., data = train)
+rpart.plot(tree_model)
+#dev.off()
+```
+```{r}
+df <- subset(new_dat, subset = !is.na(NY.GDP.PCAP.CD) & !is.na(SG.NOD.CONS), select = c(parameters, "NY.GDP.PCAP.CD"))
+model_lm <- lm(NY.GDP.PCAP.CD~., data = df)
+summary(model_lm)
+```
